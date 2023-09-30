@@ -34,7 +34,7 @@ Item {
 
     activeFocusOnTab: true
     property int iconSize
-    opacity: activeFocus ? 1 : 0.6
+    opacity: activeFocus ? 1 : 0.8
 
     implicitWidth: Math.max(icon.implicitWidth, label.contentWidth)
     implicitHeight: Math.max(icon.implicitHeight + label.height * 2, label.height)

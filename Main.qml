@@ -120,11 +120,18 @@ Rectangle {
                 faceSize: config.AvatarPixelSize ? config.AvatarPixelSize : root.width / 15
 
                 showUserList: {
-                    if ( !userListModel.hasOwnProperty("count") || !userListModel.hasOwnProperty("disableAvatarsThreshold") )
-                        return (userList.y + loginFormStack.y) > 0
-                    if ( userListModel.count == 0 )
+                    if(config.ShowUserList == "true")
+                    {
+                        if ( !userListModel.hasOwnProperty("count") || !userListModel.hasOwnProperty("disableAvatarsThreshold") )
+                            return (userList.y + loginFormStack.y) > 0
+                        if ( userListModel.count == 0 )
+                            return false
+                        return userListModel.count <= userListModel.disableAvatarsThreshold && (userList.y + loginFormStack.y) > 0
+                    }
+                    else
+                    {
                         return false
-                    return userListModel.count <= userListModel.disableAvatarsThreshold && (userList.y + loginFormStack.y) > 0
+                    }
                 }
 
                 notificationMessage: {

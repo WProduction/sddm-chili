@@ -54,7 +54,7 @@ LoginFormLayout {
             font.pointSize: usernameFontSize * 0.9
             implicitWidth: root.width / 5
             implicitHeight: usernameFontSize * 2.75
-            opacity: 0.5
+            opacity: 0.8
 
             style: TextFieldStyle {
                 textColor: passwordFieldOutlined ? "white" : "black"
